@@ -95,6 +95,7 @@ PKG_CHECK_MODULES([libapr1], [apr-1])
 PKG_CHECK_MODULES([XCB], [xcb])
 PKG_CHECK_MODULES([XCBPRESENT], [xcb-present])
 PKG_CHECK_MODULES([PANGOCAIRO], [pangocairo])
+PKG_CHECK_MODULES([libzmq], [libzmq])
 
 # Checks for header files.
 AC_HEADER_RESOLV

@@ -11,21 +11,12 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
-
+#include <zmq.hpp>
+#include <ipc_msg.pb.h>
 
 using namespace std;
 
 #define DQ_COUNT_INVALID   (uint32_t)-1
-
-
-//Some Hack Here...
-#define DROPRATE_UPDATE_PERIOD 40
-#define NN_UPDATE_PERIOD 100
-#define DROPRATE_BOUND 0.1
-
-//#define PATH_TO_PYTHON_INTERFACE "/home/rl/Project/rl-qm/mahimahiInterface/"
-#define PATH_TO_PYTHON_INTERFACE "/home/songtaohe/Project/QueueManagement/rl-qm/mahimahiInterface/"
-
 
 double * _drop_prob = NULL;
 double rl_drop_prob = 0.0;
@@ -121,49 +112,82 @@ return context;
 }
 
 
-// usign named pipe
+//// usign named pipe
+//void* UpdateDropRate_thread(void* context)
+//{
+//  
+//  char buffer[1024];
+//  int ret;
+//  
+//  while(true)
+//  {
+//    printf("waiting mahimahi_pipe in pie\n");
+//    int fd1 = open("mahimahi_pipe1",O_RDONLY);
+//    ret = read(fd1, buffer, 128);
+//    close(fd1);
+//
+//    //if (ret <=0) {
+//    //  continue;
+//    //}
+//    printf("%d Read %s\n",ret,  buffer);
+//  
+//    if(buffer[0] == 'W')
+//    {
+//      int a = 0;
+//      int b = 0;
+//      int c = 0;
+//      sscanf(buffer, "W %d %d %d %lf", &a, &b, &c, &rl_drop_prob);
+//      
+//      state_rl_enable = b;
+//    }
+//    
+//    if(buffer[0] == 'R')
+//    {
+//      //sprintf(buffer, "%lu 0 0 0  0 %lu %lu %u %f 0 0\n", eq_counter, dq_bytes, dq_counter, _current_qdelay, *_drop_prob );
+//      sprintf(buffer, "%lu 0 0 0  0 %lu %lu %lu %f 0 0\n", eq_counter, dq_bytes, dq_counter, qdelay_total, *_drop_prob );
+//      
+//      fd1 = open("mahimahi_pipe2",O_WRONLY);
+//      ret = write(fd1, buffer, strlen(buffer)+1);
+//      close(fd1);
+//
+//    }
+//
+//    
+//
+//    
+//
+//  }
+//return context;
+//}
+
+// update drop rate using ipc
 void* UpdateDropRate_thread(void* context)
 {
-  
-  char buffer[1024];
-  int ret;
-  
+  printf("establishing ipc socket on mahimahi\n");
+  zmq::context_t context2 (1);
+  zmq::socket_t socket (context2, ZMQ_REQ);  
+  socket.connect("ipc:///tmp/aqm_cpp_python_ipc");
+
+  rl::IPCMessage request;
+  rl::IPCReply reply;
+  std::string data;
+  zmq::message_t msg;
+
   while(true)
   {
-    printf("waiting mahimahi_pipe\n");
-    int fd1 = open("mahimahi_pipe1",O_RDONLY);
-    ret = read(fd1, buffer, 128);
-    close(fd1);
-
-    //if (ret <=0) {
-    //  continue;
-    //}
-    printf("%d Read %s\n",ret,  buffer);
-  
-    if(buffer[0] == 'W')
-    {
-      int a = 0;
-      int b = 0;
-      int c = 0;
-      sscanf(buffer, "W %d %d %d %lf", &a, &b, &c, &rl_drop_prob);
-      
-      state_rl_enable = b;
-    }
-    
-    if(buffer[0] == 'R')
-    {
-      //sprintf(buffer, "%lu 0 0 0  0 %lu %lu %u %f 0 0\n", eq_counter, dq_bytes, dq_counter, _current_qdelay, *_drop_prob );
-      sprintf(buffer, "%lu 0 0 0  0 %lu %lu %lu %f 0 0\n", eq_counter, dq_bytes, dq_counter, qdelay_total, *_drop_prob );
-      
-      fd1 = open("mahimahi_pipe2",O_WRONLY);
-      ret = write(fd1, buffer, strlen(buffer)+1);
-      close(fd1);
-
-    }
-
-    
-
-    
+    request.set_msg("get_prob");
+    request.set_eqc(eq_counter);
+    request.set_eqb(dq_bytes);
+    request.set_dqc(dq_counter);
+    request.set_qdelay(qdelay_total);
+    request.set_current_prob(*_drop_prob);
+    request.SerializeToString(&data);
+    socket.send (&data[0],data.size());
+    socket.recv (&msg);
+    std::string sdata(static_cast<char*>(msg.data()), msg.size());
+    reply.ParseFromString(sdata);
+    if (strcmp(&reply.msg()[0],"set_prob")==0)
+        rl_drop_prob = (double)reply.prob(); 
 
   }
 return context;
@@ -265,7 +289,7 @@ bool PIEPacketQueue::drop_early ()
 
   double random = uniform_generator_(prng_);
 
-  if(state_rl_enable == 1)
+  //if(state_rl_enable == 1)
   {
     drop_prob_ = rl_drop_prob;
   }
