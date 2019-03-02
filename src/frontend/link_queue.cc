@@ -73,6 +73,7 @@ LinkQueue::LinkQueue( const string & link_name, const string & filename, const s
         *log_ << "# mahimahi mm-link (" << link_name << ") [" << filename << "] > " << logfile << endl;
         *log_ << "# command line: " << command_line << endl;
         *log_ << "# queue: " << packet_queue_->to_string() << endl;
+        *log_ << "# init timestamp: " << initial_timestamp() << endl;
         *log_ << "# base timestamp: " << base_timestamp_ << endl;
         const char * prefix = getenv( "MAHIMAHI_SHELL_PREFIX" );
         if ( prefix ) {
@@ -112,6 +113,14 @@ void LinkQueue::record_arrival( const uint64_t arrival_time, const size_t pkt_si
     /* meter it */
     if ( throughput_graph_ ) {
         throughput_graph_->add_value_now( 1, pkt_size );
+    }
+}
+
+void LinkQueue::record_drop( const uint64_t time, const size_t pkts_dropped, const size_t bytes_dropped)
+{
+    /* log it */
+    if ( log_ ) {
+        *log_ << time << " d " << pkts_dropped << " " << bytes_dropped << endl;
     }
 }
 
@@ -156,8 +165,21 @@ void LinkQueue::read_packet( const string & contents )
 
     rationalize( now );
 
-    record_arrival( now, contents.size());
+    record_arrival( now, contents.size() );
+
+    unsigned int bytes_before = packet_queue_->size_bytes();
+    unsigned int packets_before = packet_queue_->size_packets();
+
     packet_queue_->enqueue( QueuedPacket( contents, now ) );
+
+    assert( packet_queue_->size_packets() <= packets_before + 1 );
+    assert( packet_queue_->size_bytes() <= bytes_before + contents.size() );
+    
+    unsigned int missing_packets = packets_before + 1 - packet_queue_->size_packets();
+    unsigned int missing_bytes = bytes_before + contents.size() - packet_queue_->size_bytes();
+    if ( missing_packets > 0 || missing_bytes > 0 ) {
+        record_drop( now, missing_packets, missing_bytes );
+    }
 }
 
 uint64_t LinkQueue::next_delivery_time( void ) const
