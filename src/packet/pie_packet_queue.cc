@@ -268,21 +268,22 @@ void PIEPacketQueue::enqueue( QueuedPacket && p )
 bool PIEPacketQueue::drop_early ()
 {
 
-  if(state_rl_enable == 0)
-  {  
-  if ( burst_allowance_ > 0 ) {
-    return false;
-  }
+  // TODO: comment out for now so that the python side can set drop rate
+  // if(state_rl_enable == 0)
+  // {  
+  //   if ( burst_allowance_ > 0 ) {
+  //     return false;
+  //   }
 
-  if ( qdelay_old_ < qdelay_ref_/2 && drop_prob_ < 0.2) {
-  //if ( qdelay_old_ < qdelay_ref_/2 && rl_drop_prob < 0.2) {
-    return false;        
-  }
+  //   if ( qdelay_old_ < qdelay_ref_/2 && drop_prob_ < 0.2) {
+  //   //if ( qdelay_old_ < qdelay_ref_/2 && rl_drop_prob < 0.2) {
+  //     return false;        
+  //   }
 
-  if ( size_bytes() < (2 * PACKET_SIZE) ) {
-    return false;
-  }
-  }
+  //   if ( size_bytes() < (2 * PACKET_SIZE) ) {
+  //     return false;
+  //   }
+  // }
   
 
 
