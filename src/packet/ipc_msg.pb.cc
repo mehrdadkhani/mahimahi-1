@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -17,162 +18,186 @@
 // @@protoc_insertion_point(includes)
 
 namespace rl {
+class IPCMessageDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<IPCMessage> {
+} _IPCMessage_default_instance_;
+class IPCReplyDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<IPCReply> {
+} _IPCReply_default_instance_;
+
+namespace protobuf_ipc_5fmsg_2eproto {
+
 
 namespace {
 
-const ::google::protobuf::Descriptor* IPCMessage_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  IPCMessage_reflection_ = NULL;
-const ::google::protobuf::Descriptor* IPCReply_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  IPCReply_reflection_ = NULL;
+::google::protobuf::Metadata file_level_metadata[2];
 
 }  // namespace
 
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
+    const TableStruct::entries[] = {
+  {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
+};
 
-void protobuf_AssignDesc_ipc_5fmsg_2eproto() {
-  protobuf_AddDesc_ipc_5fmsg_2eproto();
-  const ::google::protobuf::FileDescriptor* file =
-    ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
-      "ipc_msg.proto");
-  GOOGLE_CHECK(file != NULL);
-  IPCMessage_descriptor_ = file->message_type(0);
-  static const int IPCMessage_offsets_[6] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, msg_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, eqc_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, dqc_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, eqb_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, qdelay_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, current_prob_),
-  };
-  IPCMessage_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      IPCMessage_descriptor_,
-      IPCMessage::default_instance_,
-      IPCMessage_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(IPCMessage));
-  IPCReply_descriptor_ = file->message_type(1);
-  static const int IPCReply_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCReply, msg_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCReply, prob_),
-  };
-  IPCReply_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      IPCReply_descriptor_,
-      IPCReply::default_instance_,
-      IPCReply_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCReply, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCReply, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(IPCReply));
-}
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
+    const TableStruct::aux[] = {
+  ::google::protobuf::internal::AuxillaryParseTableField(),
+};
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
+    TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+};
+
+const ::google::protobuf::uint32 TableStruct::offsets[] = {
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, msg_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, eqc_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, dqc_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, eqb_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, qdelay_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCMessage, current_prob_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCReply, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCReply, msg_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IPCReply, prob_),
+};
+
+static const ::google::protobuf::internal::MigrationSchema schemas[] = {
+  { 0, -1, sizeof(IPCMessage)},
+  { 11, -1, sizeof(IPCReply)},
+};
+
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&_IPCMessage_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_IPCReply_default_instance_),
+};
 
 namespace {
 
-GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
-  ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
-                 &protobuf_AssignDesc_ipc_5fmsg_2eproto);
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  ::google::protobuf::MessageFactory* factory = NULL;
+  AssignDescriptors(
+      "ipc_msg.proto", schemas, file_default_instances, TableStruct::offsets, factory,
+      file_level_metadata, NULL, NULL);
 }
 
+void protobuf_AssignDescriptorsOnce() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &protobuf_AssignDescriptors);
+}
+
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    IPCMessage_descriptor_, &IPCMessage::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    IPCReply_descriptor_, &IPCReply::default_instance());
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
 }
 
 }  // namespace
 
-void protobuf_ShutdownFile_ipc_5fmsg_2eproto() {
-  delete IPCMessage::default_instance_;
-  delete IPCMessage_reflection_;
-  delete IPCReply::default_instance_;
-  delete IPCReply_reflection_;
+void TableStruct::Shutdown() {
+  _IPCMessage_default_instance_.Shutdown();
+  delete file_level_metadata[0].reflection;
+  _IPCReply_default_instance_.Shutdown();
+  delete file_level_metadata[1].reflection;
 }
 
-void protobuf_AddDesc_ipc_5fmsg_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\ripc_msg.proto\022\002rl\"f\n\nIPCMessage\022\013\n\003msg"
-    "\030\001 \001(\t\022\013\n\003eqc\030\002 \001(\004\022\013\n\003dqc\030\003 \001(\004\022\013\n\003eqb\030"
-    "\004 \001(\004\022\016\n\006qdelay\030\005 \001(\004\022\024\n\014current_prob\030\006 "
-    "\001(\002\"%\n\010IPCReply\022\013\n\003msg\030\001 \001(\t\022\014\n\004prob\030\002 \001"
-    "(\002", 162);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "ipc_msg.proto", &protobuf_RegisterTypes);
-  IPCMessage::default_instance_ = new IPCMessage();
-  IPCReply::default_instance_ = new IPCReply();
-  IPCMessage::default_instance_->InitAsDefaultInstance();
-  IPCReply::default_instance_->InitAsDefaultInstance();
-  ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_ipc_5fmsg_2eproto);
+  ::google::protobuf::internal::InitProtobufDefaults();
+  _IPCMessage_default_instance_.DefaultConstruct();
+  _IPCReply_default_instance_.DefaultConstruct();
 }
 
+void InitDefaults() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &TableStruct::InitDefaultsImpl);
+}
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] = {
+      "\n\ripc_msg.proto\022\002rl\"f\n\nIPCMessage\022\013\n\003msg"
+      "\030\001 \001(\t\022\013\n\003eqc\030\002 \001(\004\022\013\n\003dqc\030\003 \001(\004\022\013\n\003eqb\030"
+      "\004 \001(\004\022\016\n\006qdelay\030\005 \001(\004\022\024\n\014current_prob\030\006 "
+      "\001(\002\"%\n\010IPCReply\022\013\n\003msg\030\001 \001(\t\022\014\n\004prob\030\002 \001"
+      "(\002b\006proto3"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 170);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "ipc_msg.proto", &protobuf_RegisterTypes);
+  ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
+}
+
+void AddDescriptors() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
+}
 // Force AddDescriptors() to be called at static initialization time.
-struct StaticDescriptorInitializer_ipc_5fmsg_2eproto {
-  StaticDescriptorInitializer_ipc_5fmsg_2eproto() {
-    protobuf_AddDesc_ipc_5fmsg_2eproto();
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
   }
-} static_descriptor_initializer_ipc_5fmsg_2eproto_;
+} static_descriptor_initializer;
+
+}  // namespace protobuf_ipc_5fmsg_2eproto
+
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int IPCMessage::kMsgFieldNumber;
 const int IPCMessage::kEqcFieldNumber;
 const int IPCMessage::kDqcFieldNumber;
 const int IPCMessage::kEqbFieldNumber;
 const int IPCMessage::kQdelayFieldNumber;
 const int IPCMessage::kCurrentProbFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 IPCMessage::IPCMessage()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_ipc_5fmsg_2eproto::InitDefaults();
+  }
   SharedCtor();
+  // @@protoc_insertion_point(constructor:rl.IPCMessage)
 }
-
-void IPCMessage::InitAsDefaultInstance() {
-}
-
 IPCMessage::IPCMessage(const IPCMessage& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  msg_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.msg().size() > 0) {
+    msg_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.msg_);
+  }
+  ::memcpy(&eqc_, &from.eqc_,
+    reinterpret_cast<char*>(&current_prob_) -
+    reinterpret_cast<char*>(&eqc_) + sizeof(current_prob_));
+  // @@protoc_insertion_point(copy_constructor:rl.IPCMessage)
 }
 
 void IPCMessage::SharedCtor() {
+  msg_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&eqc_, 0, reinterpret_cast<char*>(&current_prob_) -
+    reinterpret_cast<char*>(&eqc_) + sizeof(current_prob_));
   _cached_size_ = 0;
-  msg_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  eqc_ = GOOGLE_ULONGLONG(0);
-  dqc_ = GOOGLE_ULONGLONG(0);
-  eqb_ = GOOGLE_ULONGLONG(0);
-  qdelay_ = GOOGLE_ULONGLONG(0);
-  current_prob_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 IPCMessage::~IPCMessage() {
+  // @@protoc_insertion_point(destructor:rl.IPCMessage)
   SharedDtor();
 }
 
 void IPCMessage::SharedDtor() {
-  if (msg_ != &::google::protobuf::internal::kEmptyString) {
-    delete msg_;
-  }
-  if (this != default_instance_) {
-  }
+  msg_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void IPCMessage::SetCachedSize(int size) const {
@@ -181,413 +206,537 @@ void IPCMessage::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* IPCMessage::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return IPCMessage_descriptor_;
+  protobuf_ipc_5fmsg_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_ipc_5fmsg_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const IPCMessage& IPCMessage::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_ipc_5fmsg_2eproto();
-  return *default_instance_;
+  protobuf_ipc_5fmsg_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
 
-IPCMessage* IPCMessage::default_instance_ = NULL;
-
-IPCMessage* IPCMessage::New() const {
-  return new IPCMessage;
+IPCMessage* IPCMessage::New(::google::protobuf::Arena* arena) const {
+  IPCMessage* n = new IPCMessage;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void IPCMessage::Clear() {
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (has_msg()) {
-      if (msg_ != &::google::protobuf::internal::kEmptyString) {
-        msg_->clear();
-      }
-    }
-    eqc_ = GOOGLE_ULONGLONG(0);
-    dqc_ = GOOGLE_ULONGLONG(0);
-    eqb_ = GOOGLE_ULONGLONG(0);
-    qdelay_ = GOOGLE_ULONGLONG(0);
-    current_prob_ = 0;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+// @@protoc_insertion_point(message_clear_start:rl.IPCMessage)
+  msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&eqc_, 0, reinterpret_cast<char*>(&current_prob_) -
+    reinterpret_cast<char*>(&eqc_) + sizeof(current_prob_));
 }
 
 bool IPCMessage::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  while ((tag = input->ReadTag()) != 0) {
+  // @@protoc_insertion_point(parse_start:rl.IPCMessage)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string msg = 1;
+      // string msg = 1;
       case 1: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_msg()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->msg().data(), this->msg().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "rl.IPCMessage.msg"));
         } else {
-          goto handle_uninterpreted;
+          goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_eqc;
         break;
       }
 
-      // optional uint64 eqc = 2;
+      // uint64 eqc = 2;
       case 2: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_eqc:
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u)) {
+
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
                  input, &eqc_)));
-          set_has_eqc();
         } else {
-          goto handle_uninterpreted;
+          goto handle_unusual;
         }
-        if (input->ExpectTag(24)) goto parse_dqc;
         break;
       }
 
-      // optional uint64 dqc = 3;
+      // uint64 dqc = 3;
       case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_dqc:
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u)) {
+
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
                  input, &dqc_)));
-          set_has_dqc();
         } else {
-          goto handle_uninterpreted;
+          goto handle_unusual;
         }
-        if (input->ExpectTag(32)) goto parse_eqb;
         break;
       }
 
-      // optional uint64 eqb = 4;
+      // uint64 eqb = 4;
       case 4: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_eqb:
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u)) {
+
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
                  input, &eqb_)));
-          set_has_eqb();
         } else {
-          goto handle_uninterpreted;
+          goto handle_unusual;
         }
-        if (input->ExpectTag(40)) goto parse_qdelay;
         break;
       }
 
-      // optional uint64 qdelay = 5;
+      // uint64 qdelay = 5;
       case 5: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_qdelay:
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u)) {
+
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
                  input, &qdelay_)));
-          set_has_qdelay();
         } else {
-          goto handle_uninterpreted;
+          goto handle_unusual;
         }
-        if (input->ExpectTag(53)) goto parse_current_prob;
         break;
       }
 
-      // optional float current_prob = 6;
+      // float current_prob = 6;
       case 6: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_current_prob:
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u)) {
+
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &current_prob_)));
-          set_has_current_prob();
         } else {
-          goto handle_uninterpreted;
+          goto handle_unusual;
         }
-        if (input->ExpectAtEnd()) return true;
         break;
       }
 
       default: {
-      handle_uninterpreted:
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          return true;
+          goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
         break;
       }
     }
   }
+success:
+  // @@protoc_insertion_point(parse_success:rl.IPCMessage)
   return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:rl.IPCMessage)
+  return false;
 #undef DO_
 }
 
 void IPCMessage::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional string msg = 1;
-  if (has_msg()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+  // @@protoc_insertion_point(serialize_start:rl.IPCMessage)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1;
+  if (this->msg().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->msg().data(), this->msg().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "rl.IPCMessage.msg");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->msg(), output);
   }
 
-  // optional uint64 eqc = 2;
-  if (has_eqc()) {
+  // uint64 eqc = 2;
+  if (this->eqc() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->eqc(), output);
   }
 
-  // optional uint64 dqc = 3;
-  if (has_dqc()) {
+  // uint64 dqc = 3;
+  if (this->dqc() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->dqc(), output);
   }
 
-  // optional uint64 eqb = 4;
-  if (has_eqb()) {
+  // uint64 eqb = 4;
+  if (this->eqb() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->eqb(), output);
   }
 
-  // optional uint64 qdelay = 5;
-  if (has_qdelay()) {
+  // uint64 qdelay = 5;
+  if (this->qdelay() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->qdelay(), output);
   }
 
-  // optional float current_prob = 6;
-  if (has_current_prob()) {
+  // float current_prob = 6;
+  if (this->current_prob() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->current_prob(), output);
   }
 
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
+  // @@protoc_insertion_point(serialize_end:rl.IPCMessage)
 }
 
-::google::protobuf::uint8* IPCMessage::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // optional string msg = 1;
-  if (has_msg()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+::google::protobuf::uint8* IPCMessage::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rl.IPCMessage)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1;
+  if (this->msg().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->msg().data(), this->msg().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "rl.IPCMessage.msg");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->msg(), target);
   }
 
-  // optional uint64 eqc = 2;
-  if (has_eqc()) {
+  // uint64 eqc = 2;
+  if (this->eqc() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->eqc(), target);
   }
 
-  // optional uint64 dqc = 3;
-  if (has_dqc()) {
+  // uint64 dqc = 3;
+  if (this->dqc() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->dqc(), target);
   }
 
-  // optional uint64 eqb = 4;
-  if (has_eqb()) {
+  // uint64 eqb = 4;
+  if (this->eqb() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->eqb(), target);
   }
 
-  // optional uint64 qdelay = 5;
-  if (has_qdelay()) {
+  // uint64 qdelay = 5;
+  if (this->qdelay() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->qdelay(), target);
   }
 
-  // optional float current_prob = 6;
-  if (has_current_prob()) {
+  // float current_prob = 6;
+  if (this->current_prob() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->current_prob(), target);
   }
 
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
+  // @@protoc_insertion_point(serialize_to_array_end:rl.IPCMessage)
   return target;
 }
 
-int IPCMessage::ByteSize() const {
-  int total_size = 0;
+size_t IPCMessage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rl.IPCMessage)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional string msg = 1;
-    if (has_msg()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->msg());
-    }
-
-    // optional uint64 eqc = 2;
-    if (has_eqc()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt64Size(
-          this->eqc());
-    }
-
-    // optional uint64 dqc = 3;
-    if (has_dqc()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt64Size(
-          this->dqc());
-    }
-
-    // optional uint64 eqb = 4;
-    if (has_eqb()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt64Size(
-          this->eqb());
-    }
-
-    // optional uint64 qdelay = 5;
-    if (has_qdelay()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt64Size(
-          this->qdelay());
-    }
-
-    // optional float current_prob = 6;
-    if (has_current_prob()) {
-      total_size += 1 + 4;
-    }
-
+  // string msg = 1;
+  if (this->msg().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->msg());
   }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
+
+  // uint64 eqc = 2;
+  if (this->eqc() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->eqc());
   }
+
+  // uint64 dqc = 3;
+  if (this->dqc() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->dqc());
+  }
+
+  // uint64 eqb = 4;
+  if (this->eqb() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->eqb());
+  }
+
+  // uint64 qdelay = 5;
+  if (this->qdelay() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->qdelay());
+  }
+
+  // float current_prob = 6;
+  if (this->current_prob() != 0) {
+    total_size += 1 + 4;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void IPCMessage::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:rl.IPCMessage)
+  GOOGLE_DCHECK_NE(&from, this);
   const IPCMessage* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const IPCMessage*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const IPCMessage>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:rl.IPCMessage)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:rl.IPCMessage)
     MergeFrom(*source);
   }
 }
 
 void IPCMessage::MergeFrom(const IPCMessage& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_msg()) {
-      set_msg(from.msg());
-    }
-    if (from.has_eqc()) {
-      set_eqc(from.eqc());
-    }
-    if (from.has_dqc()) {
-      set_dqc(from.dqc());
-    }
-    if (from.has_eqb()) {
-      set_eqb(from.eqb());
-    }
-    if (from.has_qdelay()) {
-      set_qdelay(from.qdelay());
-    }
-    if (from.has_current_prob()) {
-      set_current_prob(from.current_prob());
-    }
+// @@protoc_insertion_point(class_specific_merge_from_start:rl.IPCMessage)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.msg().size() > 0) {
+
+    msg_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.msg_);
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from.eqc() != 0) {
+    set_eqc(from.eqc());
+  }
+  if (from.dqc() != 0) {
+    set_dqc(from.dqc());
+  }
+  if (from.eqb() != 0) {
+    set_eqb(from.eqb());
+  }
+  if (from.qdelay() != 0) {
+    set_qdelay(from.qdelay());
+  }
+  if (from.current_prob() != 0) {
+    set_current_prob(from.current_prob());
+  }
 }
 
 void IPCMessage::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:rl.IPCMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IPCMessage::CopyFrom(const IPCMessage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rl.IPCMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 bool IPCMessage::IsInitialized() const {
-
   return true;
 }
 
 void IPCMessage::Swap(IPCMessage* other) {
-  if (other != this) {
-    std::swap(msg_, other->msg_);
-    std::swap(eqc_, other->eqc_);
-    std::swap(dqc_, other->dqc_);
-    std::swap(eqb_, other->eqb_);
-    std::swap(qdelay_, other->qdelay_);
-    std::swap(current_prob_, other->current_prob_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void IPCMessage::InternalSwap(IPCMessage* other) {
+  msg_.Swap(&other->msg_);
+  std::swap(eqc_, other->eqc_);
+  std::swap(dqc_, other->dqc_);
+  std::swap(eqb_, other->eqb_);
+  std::swap(qdelay_, other->qdelay_);
+  std::swap(current_prob_, other->current_prob_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata IPCMessage::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = IPCMessage_descriptor_;
-  metadata.reflection = IPCMessage_reflection_;
-  return metadata;
+  protobuf_ipc_5fmsg_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_ipc_5fmsg_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// IPCMessage
+
+// string msg = 1;
+void IPCMessage::clear_msg() {
+  msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& IPCMessage::msg() const {
+  // @@protoc_insertion_point(field_get:rl.IPCMessage.msg)
+  return msg_.GetNoArena();
+}
+void IPCMessage::set_msg(const ::std::string& value) {
+  
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:rl.IPCMessage.msg)
+}
+#if LANG_CXX11
+void IPCMessage::set_msg(::std::string&& value) {
+  
+  msg_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:rl.IPCMessage.msg)
+}
+#endif
+void IPCMessage::set_msg(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:rl.IPCMessage.msg)
+}
+void IPCMessage::set_msg(const char* value, size_t size) {
+  
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:rl.IPCMessage.msg)
+}
+::std::string* IPCMessage::mutable_msg() {
+  
+  // @@protoc_insertion_point(field_mutable:rl.IPCMessage.msg)
+  return msg_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* IPCMessage::release_msg() {
+  // @@protoc_insertion_point(field_release:rl.IPCMessage.msg)
+  
+  return msg_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void IPCMessage::set_allocated_msg(::std::string* msg) {
+  if (msg != NULL) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), msg);
+  // @@protoc_insertion_point(field_set_allocated:rl.IPCMessage.msg)
+}
+
+// uint64 eqc = 2;
+void IPCMessage::clear_eqc() {
+  eqc_ = GOOGLE_ULONGLONG(0);
+}
+::google::protobuf::uint64 IPCMessage::eqc() const {
+  // @@protoc_insertion_point(field_get:rl.IPCMessage.eqc)
+  return eqc_;
+}
+void IPCMessage::set_eqc(::google::protobuf::uint64 value) {
+  
+  eqc_ = value;
+  // @@protoc_insertion_point(field_set:rl.IPCMessage.eqc)
+}
+
+// uint64 dqc = 3;
+void IPCMessage::clear_dqc() {
+  dqc_ = GOOGLE_ULONGLONG(0);
+}
+::google::protobuf::uint64 IPCMessage::dqc() const {
+  // @@protoc_insertion_point(field_get:rl.IPCMessage.dqc)
+  return dqc_;
+}
+void IPCMessage::set_dqc(::google::protobuf::uint64 value) {
+  
+  dqc_ = value;
+  // @@protoc_insertion_point(field_set:rl.IPCMessage.dqc)
+}
+
+// uint64 eqb = 4;
+void IPCMessage::clear_eqb() {
+  eqb_ = GOOGLE_ULONGLONG(0);
+}
+::google::protobuf::uint64 IPCMessage::eqb() const {
+  // @@protoc_insertion_point(field_get:rl.IPCMessage.eqb)
+  return eqb_;
+}
+void IPCMessage::set_eqb(::google::protobuf::uint64 value) {
+  
+  eqb_ = value;
+  // @@protoc_insertion_point(field_set:rl.IPCMessage.eqb)
+}
+
+// uint64 qdelay = 5;
+void IPCMessage::clear_qdelay() {
+  qdelay_ = GOOGLE_ULONGLONG(0);
+}
+::google::protobuf::uint64 IPCMessage::qdelay() const {
+  // @@protoc_insertion_point(field_get:rl.IPCMessage.qdelay)
+  return qdelay_;
+}
+void IPCMessage::set_qdelay(::google::protobuf::uint64 value) {
+  
+  qdelay_ = value;
+  // @@protoc_insertion_point(field_set:rl.IPCMessage.qdelay)
+}
+
+// float current_prob = 6;
+void IPCMessage::clear_current_prob() {
+  current_prob_ = 0;
+}
+float IPCMessage::current_prob() const {
+  // @@protoc_insertion_point(field_get:rl.IPCMessage.current_prob)
+  return current_prob_;
+}
+void IPCMessage::set_current_prob(float value) {
+  
+  current_prob_ = value;
+  // @@protoc_insertion_point(field_set:rl.IPCMessage.current_prob)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int IPCReply::kMsgFieldNumber;
 const int IPCReply::kProbFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 IPCReply::IPCReply()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_ipc_5fmsg_2eproto::InitDefaults();
+  }
   SharedCtor();
+  // @@protoc_insertion_point(constructor:rl.IPCReply)
 }
-
-void IPCReply::InitAsDefaultInstance() {
-}
-
 IPCReply::IPCReply(const IPCReply& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  msg_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.msg().size() > 0) {
+    msg_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.msg_);
+  }
+  prob_ = from.prob_;
+  // @@protoc_insertion_point(copy_constructor:rl.IPCReply)
 }
 
 void IPCReply::SharedCtor() {
-  _cached_size_ = 0;
-  msg_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  msg_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   prob_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  _cached_size_ = 0;
 }
 
 IPCReply::~IPCReply() {
+  // @@protoc_insertion_point(destructor:rl.IPCReply)
   SharedDtor();
 }
 
 void IPCReply::SharedDtor() {
-  if (msg_ != &::google::protobuf::internal::kEmptyString) {
-    delete msg_;
-  }
-  if (this != default_instance_) {
-  }
+  msg_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void IPCReply::SetCachedSize(int size) const {
@@ -596,222 +745,298 @@ void IPCReply::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* IPCReply::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return IPCReply_descriptor_;
+  protobuf_ipc_5fmsg_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_ipc_5fmsg_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const IPCReply& IPCReply::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_ipc_5fmsg_2eproto();
-  return *default_instance_;
+  protobuf_ipc_5fmsg_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
 
-IPCReply* IPCReply::default_instance_ = NULL;
-
-IPCReply* IPCReply::New() const {
-  return new IPCReply;
+IPCReply* IPCReply::New(::google::protobuf::Arena* arena) const {
+  IPCReply* n = new IPCReply;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void IPCReply::Clear() {
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (has_msg()) {
-      if (msg_ != &::google::protobuf::internal::kEmptyString) {
-        msg_->clear();
-      }
-    }
-    prob_ = 0;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+// @@protoc_insertion_point(message_clear_start:rl.IPCReply)
+  msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  prob_ = 0;
 }
 
 bool IPCReply::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  while ((tag = input->ReadTag()) != 0) {
+  // @@protoc_insertion_point(parse_start:rl.IPCReply)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string msg = 1;
+      // string msg = 1;
       case 1: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_msg()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->msg().data(), this->msg().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "rl.IPCReply.msg"));
         } else {
-          goto handle_uninterpreted;
+          goto handle_unusual;
         }
-        if (input->ExpectTag(21)) goto parse_prob;
         break;
       }
 
-      // optional float prob = 2;
+      // float prob = 2;
       case 2: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_prob:
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(21u)) {
+
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &prob_)));
-          set_has_prob();
         } else {
-          goto handle_uninterpreted;
+          goto handle_unusual;
         }
-        if (input->ExpectAtEnd()) return true;
         break;
       }
 
       default: {
-      handle_uninterpreted:
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          return true;
+          goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
         break;
       }
     }
   }
+success:
+  // @@protoc_insertion_point(parse_success:rl.IPCReply)
   return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:rl.IPCReply)
+  return false;
 #undef DO_
 }
 
 void IPCReply::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional string msg = 1;
-  if (has_msg()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+  // @@protoc_insertion_point(serialize_start:rl.IPCReply)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1;
+  if (this->msg().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->msg().data(), this->msg().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "rl.IPCReply.msg");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->msg(), output);
   }
 
-  // optional float prob = 2;
-  if (has_prob()) {
+  // float prob = 2;
+  if (this->prob() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->prob(), output);
   }
 
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
+  // @@protoc_insertion_point(serialize_end:rl.IPCReply)
 }
 
-::google::protobuf::uint8* IPCReply::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // optional string msg = 1;
-  if (has_msg()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+::google::protobuf::uint8* IPCReply::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:rl.IPCReply)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1;
+  if (this->msg().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->msg().data(), this->msg().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "rl.IPCReply.msg");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->msg(), target);
   }
 
-  // optional float prob = 2;
-  if (has_prob()) {
+  // float prob = 2;
+  if (this->prob() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->prob(), target);
   }
 
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
+  // @@protoc_insertion_point(serialize_to_array_end:rl.IPCReply)
   return target;
 }
 
-int IPCReply::ByteSize() const {
-  int total_size = 0;
+size_t IPCReply::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:rl.IPCReply)
+  size_t total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional string msg = 1;
-    if (has_msg()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->msg());
-    }
-
-    // optional float prob = 2;
-    if (has_prob()) {
-      total_size += 1 + 4;
-    }
-
+  // string msg = 1;
+  if (this->msg().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->msg());
   }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
+
+  // float prob = 2;
+  if (this->prob() != 0) {
+    total_size += 1 + 4;
   }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void IPCReply::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(generalized_merge_from_start:rl.IPCReply)
+  GOOGLE_DCHECK_NE(&from, this);
   const IPCReply* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const IPCReply*>(
-      &from);
+      ::google::protobuf::internal::DynamicCastToGenerated<const IPCReply>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:rl.IPCReply)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:rl.IPCReply)
     MergeFrom(*source);
   }
 }
 
 void IPCReply::MergeFrom(const IPCReply& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_msg()) {
-      set_msg(from.msg());
-    }
-    if (from.has_prob()) {
-      set_prob(from.prob());
-    }
+// @@protoc_insertion_point(class_specific_merge_from_start:rl.IPCReply)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.msg().size() > 0) {
+
+    msg_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.msg_);
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from.prob() != 0) {
+    set_prob(from.prob());
+  }
 }
 
 void IPCReply::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:rl.IPCReply)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IPCReply::CopyFrom(const IPCReply& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:rl.IPCReply)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 bool IPCReply::IsInitialized() const {
-
   return true;
 }
 
 void IPCReply::Swap(IPCReply* other) {
-  if (other != this) {
-    std::swap(msg_, other->msg_);
-    std::swap(prob_, other->prob_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void IPCReply::InternalSwap(IPCReply* other) {
+  msg_.Swap(&other->msg_);
+  std::swap(prob_, other->prob_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata IPCReply::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = IPCReply_descriptor_;
-  metadata.reflection = IPCReply_reflection_;
-  return metadata;
+  protobuf_ipc_5fmsg_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_ipc_5fmsg_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// IPCReply
+
+// string msg = 1;
+void IPCReply::clear_msg() {
+  msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& IPCReply::msg() const {
+  // @@protoc_insertion_point(field_get:rl.IPCReply.msg)
+  return msg_.GetNoArena();
+}
+void IPCReply::set_msg(const ::std::string& value) {
+  
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:rl.IPCReply.msg)
+}
+#if LANG_CXX11
+void IPCReply::set_msg(::std::string&& value) {
+  
+  msg_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:rl.IPCReply.msg)
+}
+#endif
+void IPCReply::set_msg(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:rl.IPCReply.msg)
+}
+void IPCReply::set_msg(const char* value, size_t size) {
+  
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:rl.IPCReply.msg)
+}
+::std::string* IPCReply::mutable_msg() {
+  
+  // @@protoc_insertion_point(field_mutable:rl.IPCReply.msg)
+  return msg_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* IPCReply::release_msg() {
+  // @@protoc_insertion_point(field_release:rl.IPCReply.msg)
+  
+  return msg_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void IPCReply::set_allocated_msg(::std::string* msg) {
+  if (msg != NULL) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), msg);
+  // @@protoc_insertion_point(field_set_allocated:rl.IPCReply.msg)
+}
+
+// float prob = 2;
+void IPCReply::clear_prob() {
+  prob_ = 0;
+}
+float IPCReply::prob() const {
+  // @@protoc_insertion_point(field_get:rl.IPCReply.prob)
+  return prob_;
+}
+void IPCReply::set_prob(float value) {
+  
+  prob_ = value;
+  // @@protoc_insertion_point(field_set:rl.IPCReply.prob)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
